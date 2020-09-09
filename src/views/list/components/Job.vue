@@ -77,6 +77,7 @@ export default class Job extends Vue {
 
 .job-company {
     display: flex;
+    font-size: 16px;
     div {
         margin-right: 7px;
     }

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '../views/Home.vue';
+import WebView from '../views/webview/WebView.vue';
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,24 @@ const routes: RouteConfig[] = [
         component: () => import(/* webpackChunkName: "Home" */ '@/views/user/User.vue'),
         meta: {
           keepAlive: true
+        }
+      }
+    ],
+  },{
+    path: '/webview',
+    name: 'WebView',
+    component: WebView,
+    children: [
+      {
+        path: '/webview/audition',
+        name: 'Audition',
+        component: () => import(/* webpackChunkName: "WebView" */ '@/views/webview/pages/audition.vue'),
+        meta: {
+          title: '面试日程',
+          callback: {
+            text: '面试记录',
+            fun: ''
+          }
         }
       }
     ],

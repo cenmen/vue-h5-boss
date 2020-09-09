@@ -29,6 +29,19 @@ module.exports = {
  
         }
     },
+    css: {
+        loaderOptions: {
+            postcss: {
+                plugins: [
+                    require('postcss-pxtorem')({
+                        rootValue : 20, // 换算的基数
+                        propList   : ['*'],
+                    }),
+                ]
+            }
+        }
+    },
+    // 引用路径重命名
     chainWebpack: config => {
         config.resolve.alias
             .set('@', resolve('src'))

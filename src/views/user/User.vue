@@ -24,14 +24,23 @@
           </div>
         </div>
         <div class="base-bottom">
-          <div v-for="(item, index) in baseSum" :key="index" class="items">
+          <div v-for="(item, index) in baseSum" :key="index" class="items" @click="toWebView(item.path)">
             <div class="num">{{item.num}}</div>
             <div class="text">{{item.text}}</div>
           </div>
         </div>
       </div>
       <div class="user-options" ref="options">
-
+        <van-cell title="附件简历" is-link to="index" size="large" icon="notes-o"/>
+        <van-cell title="管理求职意见" is-link to="index" size="large" icon="add-o"/>
+        <van-cell title="我的发现" is-link to="index" size="large" icon="bulb-o"/>
+        <van-cell title="个人主页" is-link to="index" size="large" icon="wap-home-o"/>
+        <van-cell title="帮助与反馈" is-link to="index" size="large" icon="question-o"/>
+        <van-cell title="我的客服" is-link to="index" size="large" icon="service-o"/>
+        <van-cell title="关于" is-link to="index" size="large" icon="info-o"/>
+        <div class="remark-info">
+          <span>客服电话&nbsp;xxx-xxx-xxxx&nbsp;&nbsp;&nbsp;工作时间&nbsp;9:30-18:30</span>
+        </div>
       </div>
   </div>
 </template>
@@ -46,8 +55,11 @@ import settingImg from 'assets/setting.png'
 import editImg from 'assets/edit.png'
 import avatarImg from 'assets/logo.png'
 
+import { Cell } from 'vant';
+
 @Component({
   components: {
+    [Cell.name]: Cell,
     HeaderNav,
   }
 })
@@ -68,10 +80,10 @@ export default class User extends Vue {
 
   public get baseSum() : Array<object> {
     return [
-      {text: '沟通过', num: 208},
-      {text: '面试', num: 2},
-      {text: '已投简历', num: 25},
-      {text: '收藏', num: 5}
+      {text: '沟通过', num: 208, path: '/webview/audition'},
+      {text: '面试', num: 2, path: '/webview/audition'},
+      {text: '已投简历', num: 25, path: '/webview/audition'},
+      {text: '收藏', num: 5, path: '/webview/audition'}
     ]
   }
 
@@ -93,6 +105,9 @@ export default class User extends Vue {
     console.log(distance, this.baseOpacity)
   }
   
+  private toWebView(path: string) {
+    this.$router.push({path: path})
+  }
 }
 </script>
 
@@ -147,8 +162,12 @@ export default class User extends Vue {
   }
 }
 .user-options {
-  background: chocolate;
-  height: 100vh;
-  overflow: scroll;
+  // height: 100vh;
+  .remark-info {
+    padding: 20px 0px;
+    text-align: center;
+    color: #DCDCDC;
+    font-size: 12px;
+  }
 }
 </style>
