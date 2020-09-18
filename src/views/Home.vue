@@ -9,6 +9,10 @@
     <div class="bottom-tabs">
       <div @click="switchTab('List')" class="tabs-item">
         <img :src="icon.post" alt="" class="icon">
+        <span style="width:20px;display:inline-block">
+
+        <i class="post-icon"></i>
+        </span>
         <span class="text">职位</span>
       </div>
       <div @click="switchTab('Message')" class="tabs-item">
@@ -44,6 +48,12 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/_sprite.scss';
+.post-icon {
+  @include icon;
+  @include icon-post;
+  display: inline-block;
+}
 .view {
   margin-bottom: 50px;
 }

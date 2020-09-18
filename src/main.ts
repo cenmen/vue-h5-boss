@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import './registerServiceWorker';
-import './rem'
+import './rem'; // resize改变根结点字体
 
 Vue.config.productionTip = false;
 
