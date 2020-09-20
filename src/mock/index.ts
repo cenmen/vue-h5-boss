@@ -1,3 +1,4 @@
+// @ts-ignore
 import Mock from 'mockjs'
 import { getBody } from './util'
 import List from './data/list'

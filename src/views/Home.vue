@@ -8,19 +8,15 @@
     </div>
     <div class="bottom-tabs">
       <div @click="switchTab('List')" class="tabs-item">
-        <img :src="icon.post" alt="" class="icon">
-        <span style="width:20px;display:inline-block">
-
-        <i class="post-icon"></i>
-        </span>
+        <i class="icon post-icon"></i>
         <span class="text">职位</span>
       </div>
       <div @click="switchTab('Message')" class="tabs-item">
-        <img :src="icon.message" alt="" class="icon">
+        <i class="icon message-icon"></i>
         <span class="text">消息</span>
       </div>
       <div @click="switchTab('User')" class="tabs-item">
-        <img :src="icon.user" alt="" class="icon">
+        <i class="icon user-icon"></i>
         <span class="text">我的</span>
       </div>
     </div>
@@ -30,17 +26,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-import postImg from 'assets/post.png'
-import messageImg from 'assets/message.png'
-import userImg from 'assets/user.png'
-
 @Component({})
 export default class Home extends Vue {
-  private icon: object = {
-    post: postImg,
-    message: messageImg,
-    user: userImg,
-  }
   switchTab(name: string) {
     this.$router.push({ name: name})
   }
@@ -49,10 +36,17 @@ export default class Home extends Vue {
 
 <style lang="scss" scoped>
 @import '@/assets/_sprite.scss';
-.post-icon {
+.icon {
   @include icon;
-  @include icon-post;
-  display: inline-block;
+  &.post-icon {
+    @include icon-post;
+  }
+  &.message-icon {
+    @include icon-message;
+  }
+  &.user-icon {
+    @include icon-user;
+  }
 }
 .view {
   margin-bottom: 50px;
@@ -74,9 +68,6 @@ export default class Home extends Vue {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .icon {
-      width: 20px;
-    }
   }
 }
 </style>

@@ -5,9 +5,9 @@
             <span class="left">陈先生</span>
         </template>
         <template v-slot:right>
-            <img :src="icon.scanning" alt="" width="25px">
+            <i class="icon scanning-icon"></i>
             <span class="excision"></span>
-            <img :src="icon.setting" alt="" width="25px">
+            <i class="icon setting-icon"></i>
         </template>
       </header-nav>
       <div class="base" :style="{color: baseTextOpacity}">
@@ -15,7 +15,7 @@
           <div>
             <div class="username">陈先生</div>
             <div class="online-resume">
-              <img :src="icon.edit" alt="" width="18px">
+              <i class="icon edit-icon"></i>
               <span>我的在线简历</span>
             </div>
           </div>
@@ -47,13 +47,9 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HeaderNav from '@/components/HeaderNav'
+import HeaderNav from '@/components/HeaderNav.vue'
 import http from '@/http/axios'
-
-import scanningImg from 'assets/scanning.png'
-import settingImg from 'assets/setting.png'
-import editImg from 'assets/edit.png'
-import avatarImg from 'assets/logo.png'
+import avatarImg from '@/assets/images/logo.png'
 
 import { Cell } from 'vant';
 
@@ -65,9 +61,6 @@ import { Cell } from 'vant';
 })
 export default class User extends Vue {
   private icon: object = {
-    scanning: scanningImg,
-    setting: settingImg,
-    edit: editImg,
     logo: avatarImg,
   }
   private baseOpacity: number = 1.0
@@ -112,6 +105,21 @@ export default class User extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/_sprite.scss';
+.icon {
+  @include icon;
+  &.scanning-icon {
+    @include icon-scanning;
+  }
+  &.setting-icon {
+    @include icon-setting;
+  }
+  &.edit-icon {
+    width: 18px;
+    @include icon-edit;
+  }
+}
+
 @mixin items-center {
     display: flex;
     align-items: center;

@@ -8,7 +8,7 @@ function resolve(dir) {
 
 var templateFunction = function (data) {
   var getRem = function(val) {
-    const base = 36;
+    const base = 150;
     return parseInt(val)/base + 'rem'
   }
   var shared = '@mixin icon { background-image: url(I);background-size: W H;}'.replace('I', data.sprites[0].image).replace('W', getRem(data.spritesheet.width))
@@ -64,7 +64,7 @@ module.exports = {
     chainWebpack: config => {
         config.resolve.alias
             .set('@', resolve('src'))
-            .set('assets', resolve('src/assets/icons'))
+            .set('assets', resolve('src/assets'))
             .set('components', resolve('src/components'))
     },
     configureWebpack: config => {

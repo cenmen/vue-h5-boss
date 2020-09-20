@@ -28,8 +28,8 @@ axios.interceptors.request.use(
 )
 // 封装响应拦截，判断token是否过期
 axios.interceptors.response.use(
-  response => {
-    let {data} = response
+  res => {
+    let {data} = res
     if (data.code === 501) {    // 如果后台返回的错误标识为token过期，则重新登录
       localStorage.removeItem('token')          // token过期，移除token
       // 进行重新登录操作

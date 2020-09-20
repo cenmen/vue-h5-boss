@@ -25,7 +25,7 @@ const jobList = () => {
         area: '天河区',
         street: '东风中路'
     }
-    const data = repeat(arr, obj, 8)
+    const data = repeat(arr, obj, 12)
     return data
 }
 export default {

@@ -1,11 +1,10 @@
-@mixin icon { background-image: url(~sprite.png);background-size: 23.055555555555557rem 17.22222222222222rem;}
-@mixin icon-add { width: 5.555555555555555rem; height: 5.555555555555555rem; background-position: 0rem 0rem; }
-@mixin icon-edit { width: 5.555555555555555rem; height: 5.555555555555555rem; background-position: -5.833333333333333rem 0rem; }
-@mixin icon-logo { width: 5.555555555555555rem; height: 5.555555555555555rem; background-position: 0rem -5.833333333333333rem; }
-@mixin icon-message { width: 5.555555555555555rem; height: 5.555555555555555rem; background-position: -5.833333333333333rem -5.833333333333333rem; }
-@mixin icon-post { width: 5.555555555555555rem; height: 5.555555555555555rem; background-position: -11.666666666666666rem 0rem; }
-@mixin icon-return { width: 5.555555555555555rem; height: 5.555555555555555rem; background-position: -11.666666666666666rem -5.833333333333333rem; }
-@mixin icon-scanning { width: 5.555555555555555rem; height: 5.555555555555555rem; background-position: 0rem -11.666666666666666rem; }
-@mixin icon-search { width: 5.555555555555555rem; height: 5.555555555555555rem; background-position: -5.833333333333333rem -11.666666666666666rem; }
-@mixin icon-setting { width: 5.555555555555555rem; height: 5rem; background-position: -17.5rem 0rem; }
-@mixin icon-user { width: 5.555555555555555rem; height: 5.555555555555555rem; background-position: -11.666666666666666rem -11.666666666666666rem; }
+@mixin icon { background-image: url(~sprite.png);background-size: 4.133333333333334rem 4.133333333333334rem;}
+@mixin icon-add { width: 1.3333333333333333rem; height: 1.3333333333333333rem; background-position: 0rem 0rem; }
+@mixin icon-edit { width: 1.3333333333333333rem; height: 1.3333333333333333rem; background-position: -1.4rem 0rem; }
+@mixin icon-message { width: 1.3333333333333333rem; height: 1.3333333333333333rem; background-position: 0rem -1.4rem; }
+@mixin icon-post { width: 1.3333333333333333rem; height: 1.3333333333333333rem; background-position: -1.4rem -1.4rem; }
+@mixin icon-return { width: 1.3333333333333333rem; height: 1.3333333333333333rem; background-position: -2.8rem 0rem; }
+@mixin icon-scanning { width: 1.3333333333333333rem; height: 1.3333333333333333rem; background-position: -2.8rem -1.4rem; }
+@mixin icon-search { width: 1.3333333333333333rem; height: 1.3333333333333333rem; background-position: 0rem -2.8rem; }
+@mixin icon-setting { width: 1.3333333333333333rem; height: 1.2rem; background-position: -2.8rem -2.8rem; }
+@mixin icon-user { width: 1.3333333333333333rem; height: 1.3333333333333333rem; background-position: -1.4rem -2.8rem; }

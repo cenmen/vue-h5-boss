@@ -2,7 +2,8 @@
   <div class="home">
     <div class="place-holder"></div>
     <div class="webview-header">
-        <img :src="icon.return" alt="" width="20px" @click="toBackPage">
+        <!-- <img :src="icon.return" alt="" width="20px" @click="toBackPage"> -->
+        <i class="icon return-icon" @click="toBackPage"></i>
         <div class="title">{{$route.meta.title}}</div>
         <div class="callback" @click="onClickCallback($route.meta.callback.fun)">{{$route.meta.callback.text}}</div>
     </div>
@@ -15,13 +16,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-import returnImg from 'assets/return.png'
-
 @Component({})
 export default class Home extends Vue {
-  private icon: object = {
-    return: returnImg,
-  }
   toBackPage() {
       this.$router.go(-1)
   }
@@ -32,6 +28,13 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/_sprite.scss';
+.icon {
+  @include icon;
+  &.return-icon {
+    @include icon-return;
+  }
+}
 @mixin header-height {
     padding: 10px;
     height: 50px;

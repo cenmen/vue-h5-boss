@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
+import Login from '../views/login/Login.vue';
 import Home from '../views/Home.vue';
 import WebView from '../views/webview/WebView.vue';
 
@@ -8,6 +9,11 @@ Vue.use(VueRouter);
 const routes: RouteConfig[] = [
   {
     path: '/',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: Home,
     redirect: '/list',
@@ -37,7 +43,8 @@ const routes: RouteConfig[] = [
         }
       }
     ],
-  },{
+  },
+  {
     path: '/webview',
     name: 'WebView',
     component: WebView,
